@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Details - Urban Thread</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Urban Thread</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="customize.html">Customize</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu" id="menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section class="product-details" data-aos="fade-up">
+        <div class="container">
+            <div class="image-gallery" data-aos="fade-right" data-aos-delay="100">
+                <img src="images/product-large1.jpg" alt="Product Image 1">
+                <div class="thumbnails">
+                    <img src="images/product-thumb1.jpg" alt="Thumbnail 1" onclick="changeImage('images/product-large1.jpg')">
+                    <img src="images/product-thumb2.jpg" alt="Thumbnail 2" onclick="changeImage('images/product-large2.jpg')">
+                    <img src="images/product-thumb3.jpg" alt="Thumbnail 3" onclick="changeImage('images/product-large3.jpg')">
+                </div>
+            </div>
+            <div class="details" data-aos="fade-left" data-aos-delay="200">
+                <h1 class="product-name">Premium Cotton T-Shirt</h1>
+                <p class="product-price">$29.99</p>
+                <div class="product-description">
+                    <p>This premium cotton t-shirt offers exceptional comfort and style. Made from 100% organic cotton, it's soft on your skin and environmentally friendly. Available in a range of colors and sizes.</p>
+                    <ul>
+                        <li>Material: 100% Organic Cotton</li>
+                        <li>Fit: Regular Fit</li>
+                        <li>Care: Machine wash cold, tumble dry low</li>
+                        <li>Available Colors: Black, White, Navy, Olive</li>
+                        <li>Available Sizes: S, M, L, XL</li>
+                    </ul>
+                </div>
+                <div class="product-options">
+                    <div class="size-selector">
+                        <label for="size">Size:</label>
+                        <select id="size" name="size">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                    <div class="color-selector">
+                        <label for="color">Color:</label>
+                        <select id="color" name="color">
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="navy">Navy</option>
+                            <option value="olive">Olive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="add-to-cart">
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products" data-aos="fade-up" data-aos-delay="300">
+        <div class="container">
+            <h2>Related Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/product-related1.jpg" alt="Related Product 1">
+                    <h3>Stylish Jeans</h3>
+                    <p>$49.99</p>
+                    <a href="#" class="btn-secondary">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/product-related2.jpg" alt="Related Product 2">
+                    <h3>Casual Hoodie</h3>
+                    <p>$39.99</p>
+                    <a href="#" class="btn-secondary">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/product-related3.jpg" alt="Related Product 3">
+                    <h3>Trendy Cap</h3>
+                    <p>$19.99</p>
+                    <a href="#" class="btn-secondary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Urban Thread. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+
+        function changeImage(newSrc) {
+            const mainImage = document.querySelector('.image-gallery img');
+            mainImage.src = newSrc;
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

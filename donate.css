@@ -1,0 +1,239 @@
+/* donate.css */
+
+/* Style for the donate hero section */
+.donate-hero {
+    background: url('https://images.unsplash.com/photo-1547592166-23ac45744043?auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    height: 50vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 80px; /* To be below the fixed navbar */
+}
+
+.donate-hero .hero-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+}
+
+.donate-hero .hero-content p {
+    color: #eee;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Why donate section */
+.why-donate {
+    padding: 80px 10%;
+    background-color: #181818;
+}
+
+.why-donate .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.why-donate h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffd700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.why-donate p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.why-donate ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.why-donate li {
+    font-size: 1.1rem;
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.why-donate li::before {
+    content: "\2713"; /* Checkmark */
+    color: #ffd700;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* How to donate section */
+.how-to-donate {
+    padding: 80px 10%;
+    background-color: #121212;
+}
+
+.how-to-donate .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.how-to-donate h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffd700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.how-to-donate .donation-step {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 15px;
+}
+
+.how-to-donate h3 {
+    font-size: 1.8rem;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.how-to-donate p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.how-to-donate .donation-options {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.how-to-donate .drop-off,
+.how-to-donate .pickup {
+    flex: 1;
+    padding: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+}
+
+.how-to-donate h4 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.how-to-donate .btn-secondary {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: transparent;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+}
+
+.how-to-donate .btn-secondary:hover {
+    background-color: #ffd700;
+    color: #0f0f0f;
+}
+
+/* Impact section */
+.impact {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #181818, #0d0d0d);
+    text-align: center;
+}
+
+.impact .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.impact h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.impact p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.impact-stats div {
+    padding: 30px 20px;
+    background-color: #222;
+    border-radius: 15px;
+}
+
+.impact-stats h3 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.impact-stats p {
+    font-size: 1rem;
+    color: #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .donate-hero {
+        height: 60vh;
+    }
+
+    .donate-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .why-donate h2 {
+        font-size: 2rem;
+    }
+
+    .why-donate p {
+        font-size: 1rem;
+    }
+
+    .how-to-donate h2 {
+        font-size: 2rem;
+    }
+
+    .how-to-donate .donation-options {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .impact h2 {
+        font-size: 2rem;
+    }
+
+    .impact p {
+        font-size: 1rem;
+    }
+
+    .impact-stats {
+        grid-template-columns: 1fr;
+    }
+}

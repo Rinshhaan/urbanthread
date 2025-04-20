@@ -309,6 +309,9 @@ footer {
     .image img {
       max-width: 90%;
     }
+    .logo{
+        font-size: 1.6rem;
+    }
   
     .content-wrapper.in-view {
       transform: translateY(0);

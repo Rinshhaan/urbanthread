@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Your Own - Urban Thread</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Urban Thread</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="customize.html">Customize</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu" id="menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section class="hero create-hero" data-aos="fade-in">
+        <div class="hero-content">
+            <h1 data-aos="fade-down">Design Your Own Unique Style</h1>
+            <p data-aos="fade-up">Upload your image and see it on our products!</p>
+        </div>
+    </section>
+
+    <section class="customization-area" data-aos="fade-up">
+        <div class="container">
+            <div class="product-selector">
+                <h2>Choose Your Product</h2>
+                <div class="product-options">
+                    <div class="option active" onclick="selectProduct('tshirt')">
+                        <img src="images/whitetshirt.jpg" alt="T-Shirt">
+                        <span>T-Shirt</span>
+                    </div>
+                    <div class="option" onclick="selectProduct('bag')">
+                        <img src="images/whitebag.jpg" alt="Bag">
+                        <span>Bag</span>
+                    </div>
+                    <div class="option" onclick="selectProduct('cap')">
+                        <img src="images/whitecap.jpg" alt="Cap">
+                        <span>Cap</span>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="design-upload">
+                <h2>Upload Your Design</h2>
+                <input type="file" id="imageUpload" accept="image/*">
+                <div class="uploaded-image-preview">
+                    <img id="uploadedImage" src="#" alt="Uploaded Image Preview" style="display: none;">
+                </div>
+            </div>
+
+            <div class="product-preview">
+                <h2>Your Design on Product</h2>
+                <div class="preview-container">
+                    <img id="productCanvas" src="images/tshirt-base.png" alt="Product Preview">
+                    <img id="designLayer" src="#" alt="Design Layer" style="display: none;">
+                </div>
+            </div>
+
+            <div class="customize-controls">
+                <h2>Adjust Your Design</h2>
+                <div class="controls">
+                    <div class="control-item">
+                        <label for="designSize">Size:</label>
+                        <input type="range" id="designSize" min="50" max="300" value="100">
+                    </div>
+                    <div class="control-item">
+                        <label for="designX">Position X:</label>
+                        <input type="range" id="designX" min="0" max="200" value="50">
+                    </div>
+                    <div class="control-item">
+                        <label for="designY">Position Y:</label>
+                        <input type="range" id="designY" min="0" max="200" value="50">
+                    </div>
+                    </div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Urban Thread. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+
+        function selectProduct(product) {
+            const productCanvas = document.getElementById('productCanvas');
+            const productOptions = document.querySelectorAll('.product-options .option');
+            productOptions.forEach(option => option.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            productCanvas.src = `images/${product}.jpg`;
+            // Reset design layer when product changes
+            const designLayer = document.getElementById('designLayer');
+            designLayer.style.display = 'none';
+            designLayer.src = '#';
+        }
+
+        document.getElementById('imageUpload').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const uploadedImage = document.getElementById('uploadedImage');
+                    const designLayer = document.getElementById('designLayer');
+                    uploadedImage.src = e.target.result;
+                    designLayer.src = e.target.result;
+                    uploadedImage.style.display = 'block';
+                    designLayer.style.display = 'block';
+                    // Basic initial positioning and sizing
+                    designLayer.style.width = '100px';
+                    designLayer.style.top = '50px';
+                    designLayer.style.left = '50px';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        const designSizeSlider = document.getElementById('designSize');
+        const designXSlider = document.getElementById('designX');
+        const designYSlider = document.getElementById('designY');
+        const designLayer = document.getElementById('designLayer');
+
+        designSizeSlider.addEventListener('input', function() {
+            designLayer.style.width = this.value + 'px';
+        });
+
+        designXSlider.addEventListener('input', function() {
+            designLayer.style.left = this.value + 'px';
+        });
+
+        designYSlider.addEventListener('input', function() {
+            designLayer.style.top = this.value + 'px';
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

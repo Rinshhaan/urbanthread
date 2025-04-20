@@ -39,3 +39,35 @@ window.onbeforeunload = function () {
   window.addEventListener('scroll', checkVisibility);
   window.addEventListener('load', checkVisibility);
   
+
+
+
+  // Horizontal auto-scrolling for categories
+// Horizontal auto-scrolling for categories
+const categoryGrid = document.querySelector('.categories .category-grid');
+let scrollSpeed = 1; // Adjust for speed
+let isHovering = false;
+
+if (categoryGrid) {
+    categoryGrid.addEventListener('mouseenter', () => {
+        isHovering = true;
+    });
+
+    categoryGrid.addEventListener('mouseleave', () => {
+        isHovering = false;
+    });
+
+    function autoScroll() {
+        if (!isHovering && categoryGrid.scrollWidth > categoryGrid.clientWidth) {
+            categoryGrid.scrollLeft += scrollSpeed;
+            if (categoryGrid.scrollLeft >= categoryGrid.scrollWidth - categoryGrid.clientWidth) {
+                categoryGrid.scrollLeft = 0; // Loop back to the start
+            }
+        }
+        requestAnimationFrame(autoScroll);
+    }
+
+    autoScroll();
+
+    // Manual scroll (already handled by browser with overflow-x: auto)
+}

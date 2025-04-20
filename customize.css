@@ -1,0 +1,219 @@
+/* customize.css */
+
+/* Style for the customize hero section */
+.customize-hero {
+    background: url('https://images.unsplash.com/photo-1533045713940-9061c37ba319?auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    height: 50vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 80px; /* To be below the fixed navbar */
+}
+
+.customize-hero .hero-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+}
+
+.customize-hero .hero-content p {
+    color: #eee;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* How it works section */
+.how-it-works {
+    padding: 80px 10%;
+    background-color: #181818;
+}
+
+.how-it-works .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.how-it-works h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffd700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.how-it-works .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 15px;
+}
+
+.how-it-works .step-number {
+    background-color: #ffd700;
+    color: #0f0f0f;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.how-it-works h3 {
+    font-size: 1.8rem;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.how-it-works p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Design options section */
+.design-options {
+    padding: 80px 10%;
+    background-color: #121212;
+}
+
+.design-options .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.design-options h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffd700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.design-options p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.design-options ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.design-options li {
+    font-size: 1.1rem;
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.design-options li::before {
+    content: "\270D"; /* Pencil icon */
+    color: #ffd700;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.design-options li strong {
+    color: #ffd700;
+}
+
+/* Get started section */
+.get-started {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #1e1e1e, #0f0f0f);
+    text-align: center;
+}
+
+.get-started .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.get-started h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.get-started p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.get-started .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ffd700;
+    color: #0f0f0f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+}
+
+.get-started .btn:hover {
+    background: #b8912e;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .customize-hero {
+        height: 60vh;
+    }
+
+    .customize-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .how-it-works .step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .how-it-works .step-number {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .how-it-works h3 {
+        font-size: 1.6rem;
+    }
+
+    .design-options h2 {
+        font-size: 2rem;
+    }
+
+    .design-options p {
+        font-size: 1rem;
+    }
+
+    .design-options li {
+        font-size: 1rem;
+    }
+
+    .get-started h2 {
+        font-size: 2rem;
+    }
+
+    .get-started p {
+        font-size: 1rem;
+    }
+}

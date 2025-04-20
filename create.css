@@ -1,0 +1,201 @@
+/* create.css */
+
+/* Hero section */
+.create-hero {
+    background: url('https://images.unsplash.com/photo-1591084728045-67437d134817?auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.create-hero .hero-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+}
+
+.create-hero .hero-content p {
+    color: #eee;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Customization area */
+.customization-area {
+    padding: 80px 10%;
+    background-color: #181818;
+    color: #eee;
+}
+
+.customization-area .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.customization-area h2 {
+    color: #ffd700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    grid-column: 1 / -1; /* Span across all columns */
+    text-align: center;
+}
+
+/* Product selector */
+.product-selector .product-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.product-selector .product-options .option {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.product-selector .product-options .option.active,
+.product-selector .product-options .option:hover {
+    opacity: 1;
+}
+
+.product-selector .product-options .option img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-selector .product-options .option span {
+    display: block;
+    font-size: 1rem;
+}
+
+/* Design upload */
+.design-upload {
+    text-align: center;
+}
+
+.design-upload input[type="file"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #262626;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.design-upload .uploaded-image-preview {
+    max-width: 200px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.design-upload .uploaded-image-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Product preview */
+.product-preview {
+    text-align: center;
+}
+
+.product-preview .preview-container {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    margin: 20px auto;
+}
+
+.product-preview .preview-container img#productCanvas {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-preview .preview-container img#designLayer {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    object-fit: contain; /* Preserve aspect ratio */
+    cursor: move; /* Indicate draggable */
+}
+
+/* Customize controls */
+.customize-controls {
+    text-align: center;
+}
+
+.customize-controls .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.customize-controls .control-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customize-controls label {
+    flex-basis: 80px;
+    text-align: left;
+}
+
+.customize-controls input[type="range"] {
+    flex-grow: 1;
+}
+
+.customize-controls .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ffd700;
+    color: #0f0f0f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    margin-top: 20px;
+}
+
+.customize-controls .btn:hover {
+    background: #b8912e;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .customization-area .container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-selector .product-options {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .product-selector .product-options .option {
+        min-width: 100px;
+    }
+}
