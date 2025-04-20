@@ -225,6 +225,7 @@ footer {
 
 
 /* Scroll Section */
+/* Scroll Section */
 .scroll-section {
     padding: 80px 10%;
     display: flex;
@@ -233,13 +234,14 @@ footer {
     background-color: #121212;
   }
   
+  /* Common Styles */
   .content-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transform: translateX(100px);
-    transition: transform 1s, opacity 1s ease-out;
+    transition: transform 1s ease-out, opacity 1s ease-out;
   }
   
   .content-wrapper.left {
@@ -252,7 +254,9 @@ footer {
   
   /* Image Styling */
   .image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
@@ -278,44 +282,38 @@ footer {
   }
   
   /* Scroll Animation */
-  @keyframes slideLeft {
-    0% {
-      transform: translateX(100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideRight {
-    0% {
-      transform: translateX(-100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Trigger Animation on Scroll */
   .content-wrapper.left.in-view {
-    animation: slideLeft 1s forwards;
+    transform: translateX(0);
+    opacity: 1;
   }
   
   .content-wrapper.right.in-view {
-    animation: slideRight 1s forwards;
+    transform: translateX(0);
+    opacity: 1;
   }
   
-  /* Simple Fade-In Effect */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
+  /* 🔥 Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column !important;
+      text-align: center;
+      gap: 20px;
+      transform: translateY(50px);
     }
-    100% {
+  
+    .description {
+      margin-left: 0;
+      width: 90%;
+    }
+  
+    .image img {
+      max-width: 90%;
+    }
+  
+    .content-wrapper.in-view {
+      transform: translateY(0);
       opacity: 1;
+      transition: all 0.8s ease-in-out;
     }
   }
   

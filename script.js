@@ -23,24 +23,19 @@ window.onbeforeunload = function () {
   
 
   // Function to detect elements in the viewport
-function checkVisibility() {
+  function checkVisibility() {
     const elements = document.querySelectorAll('.content-wrapper');
   
     elements.forEach((element) => {
       const position = element.getBoundingClientRect();
   
-      // Check if element is in view
-      if (position.top >= 0 && position.bottom <= window.innerHeight) {
+      if (position.top < window.innerHeight - 100) {  // Adjust trigger position
         element.classList.add('in-view');
-      } else {
-        element.classList.remove('in-view');
       }
     });
   }
   
-  // Listen to scroll event
+  // Run check on scroll and on page load
   window.addEventListener('scroll', checkVisibility);
-  
-  // Initial check
-  checkVisibility();
+  window.addEventListener('load', checkVisibility);
   
