@@ -22,6 +22,9 @@ window.onbeforeunload = function () {
   });
   
 
+
+  
+
   // Function to detect elements in the viewport
   function checkVisibility() {
     const elements = document.querySelectorAll('.content-wrapper');
@@ -67,7 +70,9 @@ if (categoryGrid) {
         requestAnimationFrame(autoScroll);
     }
 
+    
     autoScroll();
 
+  
     // Manual scroll (already handled by browser with overflow-x: auto)
 }

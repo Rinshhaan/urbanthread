@@ -1,0 +1,136 @@
+/* tryon.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px; /* Adjust for fixed navbar height */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #1e1e1e; /* Dark container */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 95%;
+    width: 600px;
+    margin: 20px;
+    box-sizing: border-box;
+    margin-top: 110px;
+}
+
+h1 {
+    color: #00bcd4; /* Cyan accent */
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Maintain aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#webcamVideo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#tryonImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.controls label {
+    font-size: 1rem;
+    color: #bdbdbd;
+    width: 100%;
+    text-align: left;
+}
+
+.controls select,
+.controls input[type="range"],
+.controls button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controls button {
+    background-color: #00bcd4; /* Cyan button */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.controls button:hover {
+    background-color: #26c6da;
+}
+
+#capturedImageContainer {
+    margin-top: 30px;
+    border-top: 1px solid #424242;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#capturedImage {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+        margin-top: 60px;
+    }
+
+    .video-container {
+        max-width: 90%;
+        aspect-ratio: 1; /* Adjust aspect ratio for smaller screens */
+    }
+
+    .controls {
+        max-width: 80%;
+    }
+}

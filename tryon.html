@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Try-On</title>
+    <link rel="stylesheet" href="tryon.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">Urban Thread</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="customize.html">Customize</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </a></li>
+        </ul>
+        <div class="menu" id="menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Basic Try-On</h1>
+        <div class="video-container">
+            <video id="webcamVideo" autoplay playsinline></video>
+            <img id="tryonImage" src="" alt="Try-On Item">
+        </div>
+        <div class="controls">
+            <label for="itemSelect">Select Item:</label>
+            <select id="itemSelect">
+                <option value="">-- Select --</option>
+                <option value="tshirt.png">T-Shirt</option>
+                <option value="glasses.png">Glasses</option>
+                <option value="hat.png">Hat</option>
+                </select>
+            <label for="opacityControl">Opacity:</label>
+            <input type="range" id="opacityControl" min="0" max="1" step="0.1" value="0.5">
+            <button id="wear3DButton" class="wear-3d">
+                <a id="tryonLink" href="product2.html" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-tshirt"></i> Try On
+                </a>
+            </button>
+            <div id="capturedImageContainer" style="display: none;">
+                <h2>Captured Image</h2>
+                <img id="capturedImage" src="" alt="Captured">
+            </div>
+        </div>
+    </div>
+    <script src="tryon.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const tryonLink = document.getElementById('tryonLink');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    let currentSlideIndex = 0;
+
+    function updateTryonLink() {
+        const currentImageSrc = carouselSlides[currentSlideIndex].querySelector('img').src;
+        tryonLink.href = `tryon.html?image=${encodeURIComponent(currentImageSrc)}`;
+    }
+
+    const productCarousel = document.getElementById('productCarousel');
+    productCarousel.addEventListener('scroll', () => {
+        // Basic way to detect scroll end and update index (might need refinement)
+        const slideWidth = carouselSlides[0].offsetWidth;
+        currentSlideIndex = Math.round(productCarousel.scrollLeft / slideWidth);
+        updateTryonLink();
+    });
+
+    const nextSlideButton = document.getElementById('nextSlide');
+    nextSlideButton.addEventListener('click', () => {
+        currentSlideIndex = (currentSlideIndex + 1) % carouselSlides.length;
+        updateTryonLink();
+    });
+
+    const prevSlideButton = document.getElementById('prevSlide');
+    prevSlideButton.addEventListener('click', () => {
+        currentSlideIndex = (currentSlideIndex - 1 + carouselSlides.length) % carouselSlides.length;
+        updateTryonLink();
+    });
+
+    const slideIndicatorsContainer = document.getElementById('slideIndicators');
+    slideIndicatorsContainer.addEventListener('click', (event) => {
+        if (event.target.tagName === 'SPAN') {
+            const index = Array.from(slideIndicatorsContainer.children).indexOf(event.target);
+            currentSlideIndex = index;
+            updateTryonLink();
+        }
+    });
+
+    // Initial call to set the link for the first image
+    updateTryonLink();
+});
+    </script>
+</body>
+</html>
