@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Try-On</title>
+    <link rel="stylesheet" href="tryon.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Basic Try-On</h1>
+        <div class="video-container">
+            <video id="webcamVideo" autoplay playsinline></video>
+            <img id="tryonImage" src="" alt="Try-On Item">
+        </div>
+        <div class="controls">
+            <label for="itemSelect">Select Item:</label>
+            <select id="itemSelect">
+                <option value="">-- Select --</option>
+                <option value="tshirt.png">T-Shirt</option>
+                <option value="glasses.png">Glasses</option>
+                <option value="hat.png">Hat</option>
+                </select>
+            <label for="opacityControl">Opacity:</label>
+            <input type="range" id="opacityControl" min="0" max="1" step="0.1" value="0.5">
+            <button id="captureBtn">Capture Image</button>
+            <div id="capturedImageContainer" style="display: none;">
+                <h2>Captured Image</h2>
+                <img id="capturedImage" src="" alt="Captured">
+            </div>
+        </div>
+    </div>
+    <script src="tryon.js"></script>
+</body>
+</html>
