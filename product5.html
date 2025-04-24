@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Urban Thread</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product_details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
 
+   
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Urban Thread</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="customize.html">Customize</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </a></li>
+    </ul>
+    <div class="menu" id="menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</nav>
+
+<div class="whole-page">
+    <div class="product-detail-page">
+        <div class="product-visual">
+            <div class="image-carousel-container">
+                <div class="image-carousel" id="productCarousel">
+                    <img class="carousel-slide" src="images/Capp.AVIF" alt="Product Image 1">
+                    <img class="carousel-slide" src="images/Capp2.AVIF" alt="Product Image 2">
+                </div>
+                <div class="carousel-navigation">
+                    <button class="prev-slide" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slide-indicators" id="slideIndicators">
+                        </div>
+                    <button class="next-slide" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info-panel">
+            <h1 class="product-title" id="productTitle">Men Logo Embroidered cap</h1>
+            <div class="product-meta">
+                <span class="price" id="productPrice">$5.99</span>
+                <div class="actions">
+                    <button class="add-to-cart" data-id="123" data-name="My Product" data-price="29.99" data-image="images/myproduct.jpg">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>                   
+                    <button id="wear3DButton" class="wear-3d">
+                        <a href="tryon.html" style="color: inherit; text-decoration: none;">
+                            <i class="fas fa-tshirt"></i> Try On
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="product-description">
+                <h3 class="description-heading">About This Product</h3>
+                <p id="productDescription"> A casual cap for men featuring an embroidered logo, perfect for adding a sporty or personalized touch.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-specs">
+        <h2>Product Specifications</h2>
+        <ul>
+            <li><strong>Material:</strong> 100% Premium Cotton</li>
+            <li><strong>Fit:</strong> Regular Fit</li>
+            <li><strong>Care Instructions:</strong> Machine wash cold, tumble dry low</li>
+            <li><strong>Available Sizes:</strong> S, M, L, XL</li>
+            <li><strong>Colors:</strong> Black, White, Heather Grey</li>
+        </ul>
+    </div>
+
+    <div id="wear3DContainer" class="wear-3d-overlay" style="display: none;">
+        <div class="wear-3d-modal">
+            <div class="modal-header">
+                <h3>Step into 3D Wear</h3>
+                <button id="closeWear3D" class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <video id="webcamFeed" autoplay playsinline></video>
+                <img id="wear3DImageOverlay" src="" alt="Wear 3D Item">
+            </div>
+            <div class="modal-controls">
+                <label for="overlayOpacity">Overlay Opacity:</label>
+                <input type="range" id="overlayOpacity" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2025 Urban Thread. All rights reserved.</p>
+    </footer>
+
+    <script src="product_details.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
