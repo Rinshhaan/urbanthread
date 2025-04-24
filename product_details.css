@@ -40,23 +40,46 @@ body {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add fixed dimensions here */
+    width: 300px; /* Adjust to your desired fixed width */
+    height: 400px; /* Adjust to your desired fixed height */
 }
 
 .image-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    /* Prevent individual slides from expanding beyond the container */
+    width: 100%;
+    height: 100%;
 }
 
 .carousel-slide {
-    min-width: 100%;
-    height: auto;
+    /* Ensure slides maintain the container's aspect ratio if needed */
+    flex: 0 0 100%; /* Each slide takes full width of the carousel */
+    height: 100%;
 }
 
 .carousel-slide img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Adjustments for responsiveness if needed */
+@media (max-width: 768px) {
+    .image-carousel-container {
+        width: 250px; /* Adjust for smaller screens */
+        height: 350px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-carousel-container {
+        width: 200px; /* Adjust for even smaller screens */
+        height: 300px; /* Adjust for even smaller screens */
+    }
 }
 
 .carousel-navigation {
