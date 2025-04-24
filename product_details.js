@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountElement = document.getElementById('cartCount');
     const productTitleElement = document.getElementById('productTitle');
     const productPriceElement = document.getElementById('productPrice');
+    const productIdElement = document.getElementById('productId'); // Assuming you have an element with this ID
 
     let counter = 0;
     let slideInterval;
@@ -201,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addToCartButton.addEventListener('click', function() {
             const productName = productTitleElement.textContent;
             const productPrice = parseFloat(productPriceElement.textContent.replace('$', ''));
+            const productId = productIdElement ? productIdElement.textContent : Math.random().toString(36).substring(7); // Use product ID if available, otherwise generate a random one
             let productImage = '';
 
             if (carouselSlides.length > 0) {
@@ -214,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (productImage) {
                 const cartItem = {
-                    id: Math.random().toString(36).substring(7),
+                    id: productId, // Use the consistent product ID
                     name: productName,
                     price: productPrice,
                     image: productImage,
@@ -224,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let cart = localStorage.getItem('cart');
                 cart = cart ? JSON.parse(cart) : [];
 
-                const existingItemIndex = cart.findIndex(item => item.id === cartItem.id && item.name === productName);
+                const existingItemIndex = cart.findIndex(item => item.id === cartItem.id); // Find by product ID
 
                 if (existingItemIndex > -1) {
                     cart[existingItemIndex].quantity++;
